@@ -13,7 +13,7 @@
         <thead>
             <tr>
                 <td class="p-2 bg-gray-200 font-bold text-center">Book Title</td>
-                <td class="p-2 bg-gray-200 fo+nt-bold text-center">Release date</td>
+                <td class="p-2 bg-gray-200 fo+nt-bold text-center"><a href="/?sort=release_date&order={{ $order }}">Release date</a></td>
         </thead>
         @foreach($books as $book)
         <tr>
@@ -22,6 +22,7 @@
         </tr>
         @endforeach
     </table>
+    {{ $books->links() }}
 </body>
 
 </html>
