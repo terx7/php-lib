@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
     public function index(Request $request)
     {
-        $books = Book::query(20);
+        $books = Book::query()->with('author');
+
+        //$book_authors = DB::table('books')->select('books.id')->join('book_authors', 'book_auhtors.book_id', '=', 'books.id')->join('authors', 'authors.id', '=', 'book_authors.author_id')->get();
 
         $order = $request->order ?? 'desc';
 
