@@ -7,13 +7,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Document</title>
 </head>
+<?php dd(); ?>
 
 <body>
     <table class="table-auto">
         <thead>
             <tr>
                 <td class="p-2 bg-gray-200 font-bold text-center"><a href="/?sort=title&order={{ $order }}">Book Title</a></td>
-                <td class="p-2 bg-gray-200 font-bold text-center"><a href="/?sort={{ $author -> last_name}}&order={{ $order }}">Authors</a></td>
+                <td class="p-2 bg-gray-200 font-bold text-center"><a href="/?sort=&order={{ $order }}">Authors</a></td>
                 <td class="p-2 bg-gray-200 fo+nt-bold text-center"><a href="/?sort=release_date&order={{ $order }}">Release date</a></td>
         </thead>
         @foreach($books as $book)
